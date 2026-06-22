@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 
 export function AuthPanel() {
   return (
-    <Card className="h-full border-[#E5E7EB] bg-white shadow-sm">
+    <Card className="h-full border-[#E7E1D6] bg-white shadow-sm">
       <CardHeader>
         <CardTitle>Authentication</CardTitle>
         <p className="text-sm text-[#6B7280]">Secure desk access for students, scanner practice, and paper accounts.</p>

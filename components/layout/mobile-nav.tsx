@@ -14,16 +14,16 @@ export function MobileNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-30 border-b border-slate-700 bg-[#1E293B] p-3 lg:hidden">
+    <div className="sticky top-0 z-30 border-b border-[#DDD5C6] bg-[#ECE5D9] p-3 lg:hidden">
       <div className="flex items-center justify-between gap-3">
         <BrandMark compact />
-        <Button size="icon" variant="outline" aria-label="Open navigation" onClick={() => setOpen((current) => !current)} className="bg-slate-800 text-white">
+        <Button size="icon" variant="outline" aria-label="Open navigation" onClick={() => setOpen((current) => !current)} className="bg-white">
           {open ? <X /> : <Menu />}
         </Button>
       </div>
 
       {open ? (
-        <div className="mt-3 grid gap-2 rounded-xl border border-slate-600 bg-slate-800 p-3">
+        <div className="mt-3 grid gap-2 rounded-xl border border-[#DDD5C6] bg-[#F7F3EA] p-3">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const active = pathname === item.href;
@@ -34,8 +34,8 @@ export function MobileNav() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "inline-flex h-10 items-center gap-2 rounded-lg border border-slate-600 px-3 text-sm font-semibold text-slate-200",
-                  active && "bg-slate-700 text-white"
+                  "inline-flex h-10 items-center gap-2 rounded-lg border border-[#DDD5C6] px-3 text-sm font-semibold text-[#4B5563]",
+                  active && "bg-white text-[#315ECA]"
                 )}
               >
                 <Icon className="size-4" />

@@ -8,12 +8,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-[#2563EB] text-white shadow-sm hover:-translate-y-0.5 hover:bg-[#1d4ed8]",
-        secondary: "bg-[#F8FAFC] text-[#111827] border border-[#E5E7EB] hover:-translate-y-0.5 hover:bg-[#EFF6FF]",
-        outline: "border border-[#D1D5DB] bg-white text-[#111827] hover:-translate-y-0.5 hover:border-[#2563EB] hover:bg-[#EFF6FF]",
-        ghost: "text-[#6B7280] hover:bg-[#F3F4F6] hover:text-[#111827]",
+        default: "bg-[#315ECA] text-white shadow-sm hover:-translate-y-0.5 hover:bg-[#284fb0]",
+        secondary: "bg-[#F7F3EA] text-[#1F2937] border border-[#E7E1D6] hover:-translate-y-0.5 hover:bg-white",
+        outline: "border border-[#D9D2C3] bg-white text-[#1F2937] hover:-translate-y-0.5 hover:border-[#315ECA] hover:bg-[#F5F8FF]",
+        ghost: "text-[#6B7280] hover:bg-[#F3EEE5] hover:text-[#1F2937]",
         destructive: "bg-[#DC2626] text-white hover:bg-[#b91c1c]",
-        bullish: "bg-[#16A34A] text-white hover:bg-[#15803d]"
+        bullish: "bg-[#2F855A] text-white hover:bg-[#276749]"
       },
       size: {
         default: "h-10 px-4",

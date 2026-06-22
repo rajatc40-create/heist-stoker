@@ -1,4 +1,4 @@
-import { brand } from "@/lib/constants";
+﻿import { brand } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface BrandMarkProps {
@@ -9,7 +9,7 @@ interface BrandMarkProps {
 export function BrandMark({ compact = false, className }: BrandMarkProps) {
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      <div className="grid size-10 place-items-center rounded-xl border border-[#F59E0B]/45 bg-[#F59E0B]/10 text-sm font-black text-[#F59E0B] shadow-[0_10px_24px_rgba(245,158,11,0.12)]">
+      <div className="grid size-10 place-items-center rounded-xl border border-[#D5C7A2] bg-[#FFF7E6] text-sm font-black text-[#C98A1A] shadow-[0_8px_18px_rgba(201,138,26,0.12)]">
         HS
       </div>
       <div className="min-w-0">
