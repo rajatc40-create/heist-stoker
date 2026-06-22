@@ -100,25 +100,25 @@ const platformModules = [
 export function DashboardHome() {
   return (
     <AppShell title="Command Center" subtitle="Scanner, paper trading, market watch, and student learning hub.">
-      <div className="grid gap-4">
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-6">
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {actionCards.map((card) => {
             const Icon = card.icon;
 
             return (
-              <Card key={card.title} className="border-gold/20 bg-black/35">
-                <CardContent className="grid gap-4 p-5">
+              <Card key={card.title} className="h-full border-gold/20 bg-black/35">
+                <CardContent className="flex h-full min-h-[238px] flex-col gap-5 p-6">
                   <div className="flex items-start justify-between gap-3">
-                    <div className="grid size-11 place-items-center rounded-md border border-gold/25 bg-gold/10 text-gold">
+                    <div className="grid size-12 place-items-center rounded-2xl border border-gold/25 bg-gold/10 text-gold">
                       <Icon className="size-5" />
                     </div>
                     <SourceBadge source={card.badge} />
                   </div>
-                  <div>
-                    <p className="text-lg font-bold text-white">{card.title}</p>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{card.description}</p>
+                  <div className="space-y-2">
+                    <p className="text-xl font-bold text-white">{card.title}</p>
+                    <p className="text-sm leading-7 text-muted-foreground">{card.description}</p>
                   </div>
-                  <Button asChild className="w-full justify-between">
+                  <Button asChild className="mt-auto w-full justify-between">
                     <Link href={card.href}>
                       {card.cta}
                       <ArrowUpRight />
@@ -130,12 +130,12 @@ export function DashboardHome() {
           })}
         </div>
 
-        <div className="grid gap-4 2xl:grid-cols-[1fr_360px]">
+        <div className="grid gap-5 2xl:grid-cols-[minmax(0,1fr)_360px]">
           <HeroSection />
           <AuthPanel />
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-6">
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-6">
           {dashboardStats.map((stat, index) => (
             <MetricCard
               key={stat.label}
@@ -147,7 +147,7 @@ export function DashboardHome() {
           ))}
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {platformModules.map((module) => {
             const Icon = module.icon;
 
@@ -155,22 +155,22 @@ export function DashboardHome() {
               <Link
                 key={module.href}
                 href={module.href}
-                className="group rounded-lg border border-white/10 bg-black/35 p-4 transition-colors hover:border-gold/35 hover:bg-gold/10"
+                className="premium-shadow group rounded-[24px] border border-white/10 bg-black/35 p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 hover:bg-[#131d18]"
               >
                 <div className="flex items-center justify-between gap-3">
-                  <div className="grid size-10 place-items-center rounded-md border border-gold/25 bg-gold/10 text-gold">
+                  <div className="grid size-11 place-items-center rounded-2xl border border-gold/25 bg-gold/10 text-gold">
                     <Icon className="size-5" />
                   </div>
                   <ArrowUpRight className="size-4 text-muted-foreground transition-colors group-hover:text-gold" />
                 </div>
-                <p className="mt-4 text-base font-bold text-white">{module.title}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{module.detail}</p>
+                <p className="mt-5 text-lg font-bold text-white">{module.title}</p>
+                <p className="mt-2 text-sm leading-7 text-muted-foreground">{module.detail}</p>
               </Link>
             );
           })}
         </div>
 
-        <div className="grid gap-4 xl:grid-cols-[1fr_360px]">
+        <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
           <Card className="border-white/10 bg-black/35">
             <CardHeader className="flex-row items-center justify-between gap-3">
               <div>
@@ -179,7 +179,7 @@ export function DashboardHome() {
               </div>
               <Badge variant="outline">3 Step Flow</Badge>
             </CardHeader>
-            <CardContent className="grid gap-3 md:grid-cols-3">
+            <CardContent className="grid gap-4 md:grid-cols-3">
               {workflowItems.map((item, index) => {
                 const Icon = item.icon;
 
@@ -187,16 +187,16 @@ export function DashboardHome() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group rounded-lg border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-gold/35 hover:bg-gold/10"
+                    className="group rounded-[22px] border border-white/10 bg-white/[0.03] p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 hover:bg-[#131d18]"
                   >
                     <div className="flex items-center justify-between gap-3">
-                      <div className="grid size-10 place-items-center rounded-md border border-gold/25 bg-gold/10 text-gold">
+                      <div className="grid size-11 place-items-center rounded-2xl border border-gold/25 bg-gold/10 text-gold">
                         <Icon className="size-5" />
                       </div>
                       <span className="text-xs font-semibold text-muted-foreground">0{index + 1}</span>
                     </div>
-                    <h3 className="mt-4 text-base font-bold text-white">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
+                    <h3 className="mt-5 text-lg font-bold text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.description}</p>
                   </Link>
                 );
               })}
@@ -215,30 +215,30 @@ export function DashboardHome() {
                 href={brand.youtubeUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="block rounded-lg border border-red-500/25 bg-red-500/10 p-4 transition-colors hover:bg-red-500/15"
+                className="block rounded-[22px] border border-red-500/25 bg-red-500/10 p-5 transition-all duration-200 hover:-translate-y-1 hover:bg-red-500/15"
               >
                 <div className="flex items-center gap-3">
-                  <div className="grid size-11 place-items-center rounded-md bg-red-500 text-white">
+                  <div className="grid size-12 place-items-center rounded-2xl bg-red-500 text-white">
                     <Youtube className="size-5" />
                   </div>
                   <div>
                     <p className="text-sm font-bold text-white">
                       <span className="brand-inline">{brand.name}</span> YouTube
                     </p>
-                    <p className="text-xs text-white/62">{brand.youtubeHandle} - smart money lessons and market breakdowns.</p>
+                    <p className="text-xs leading-6 text-white/62">{brand.youtubeHandle} - smart money lessons and market breakdowns.</p>
                   </div>
                 </div>
-                <div className="mt-4 inline-flex h-10 w-full items-center justify-center gap-2 rounded-md bg-steel px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">
+                <div className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-steel px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">
                   <ArrowUpRight />
                   Open Channel
                 </div>
               </a>
-              <div className="mt-3 grid grid-cols-2 gap-3">
-                <div className="rounded-md border border-white/10 bg-white/[0.03] p-3">
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                <div className="rounded-[20px] border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-xs text-muted-foreground">Mode</p>
                   <p className="mt-1 text-sm font-bold text-white">Education</p>
                 </div>
-                <div className="rounded-md border border-white/10 bg-white/[0.03] p-3">
+                <div className="rounded-[20px] border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-xs text-muted-foreground">Risk</p>
                   <p className="mt-1 text-sm font-bold text-white">Paper Only</p>
                 </div>
@@ -249,17 +249,17 @@ export function DashboardHome() {
 
         <MarketWidgets />
 
-        <div className="grid gap-4 xl:grid-cols-2">
+        <div className="grid gap-5 xl:grid-cols-2">
           <AutosaveStatus />
           <Card className="border-gold/20 bg-gold/10">
-            <CardContent className="flex flex-col gap-3 p-5 md:flex-row md:items-center md:justify-between">
+            <CardContent className="flex flex-col gap-3 p-6 md:flex-row md:items-center md:justify-between">
               <div className="flex items-start gap-3">
-                <div className="grid size-10 shrink-0 place-items-center rounded-md border border-gold/30 bg-black/35 text-gold">
+                <div className="grid size-12 shrink-0 place-items-center rounded-2xl border border-gold/30 bg-black/35 text-gold">
                   <CircleDollarSign className="size-5" />
                 </div>
                 <div>
                   <p className="font-bold text-white">Educational trading platform</p>
-                  <p className="mt-1 text-sm leading-6 text-white/68">
+                  <p className="mt-1 text-sm leading-7 text-white/68">
                     Built for practice, teaching, journaling, and discipline. It does not place real broker orders.
                   </p>
                 </div>

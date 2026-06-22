@@ -9,7 +9,7 @@ interface BrandMarkProps {
 export function BrandMark({ compact = false, className }: BrandMarkProps) {
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      <div className="grid size-11 place-items-center rounded-lg border border-gold/50 bg-gold/10 text-sm font-black text-gold shadow-glow">
+      <div className="grid size-11 place-items-center rounded-2xl border border-gold/50 bg-gold/10 text-sm font-black text-gold shadow-glow">
         HS
       </div>
       {!compact && (

@@ -19,13 +19,13 @@ export function MetricCard({ label, value, icon: Icon, tone = "gold" }: MetricCa
           : "text-gold bg-gold/10 border-gold/30";
 
   return (
-    <Card className="border-white/10 bg-black/35">
-      <CardContent className="flex items-center justify-between gap-4 p-5">
+    <Card className="h-full border-white/10 bg-black/35">
+      <CardContent className="flex min-h-[124px] items-center justify-between gap-4 p-6">
         <div className="min-w-0">
           <p className="truncate text-sm text-muted-foreground">{label}</p>
-          <p className="mt-2 truncate text-2xl font-bold text-white">{value}</p>
+          <p className="mt-3 truncate text-[30px] font-bold leading-none text-white">{value}</p>
         </div>
-        <div className={`grid size-11 shrink-0 place-items-center rounded-md border ${toneClass}`}>
+        <div className={`grid size-12 shrink-0 place-items-center rounded-2xl border ${toneClass}`}>
           <Icon className="size-5" />
         </div>
       </CardContent>

@@ -19,12 +19,12 @@ export function AppShell({ children, title, subtitle }: AppShellProps) {
       <Sidebar />
       <main className="min-w-0 flex-1">
         <MobileNav />
-        <header className="flex flex-col gap-4 border-b border-white/10 bg-black/45 p-4 backdrop-blur md:flex-row md:items-center md:justify-between md:p-6">
+        <header className="sticky top-0 z-20 flex flex-col gap-4 border-b border-white/10 bg-[#0b120f]/85 p-4 backdrop-blur-xl md:flex-row md:items-center md:justify-between md:px-6 md:py-5">
           <div className="flex items-center gap-4">
             <BrandMark compact className="lg:hidden" />
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <h2 className="text-2xl font-bold tracking-normal text-white">{title}</h2>
+                <h2 className="text-2xl font-bold tracking-normal text-white md:text-[30px]">{title}</h2>
                 <Badge variant="bullish">
                   <Radio className="mr-1 size-3" />
                   Live Feed
@@ -35,20 +35,27 @@ export function AppShell({ children, title, subtitle }: AppShellProps) {
             </div>
           </div>
           <div className="flex w-full min-w-0 items-center gap-2 md:w-auto">
-            <div className="relative min-w-0 flex-1 md:w-72">
+            <div className="relative min-w-0 flex-1 md:w-80">
               <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-              <Input className="pl-9" placeholder="Search symbol, setup, scanner" />
+              <Input className="h-11 rounded-2xl border-white/10 bg-white/[0.04] pl-9" placeholder="Search symbol, setup, scanner" />
             </div>
-            <Button size="icon" variant="outline" aria-label="Notifications">
+            <Button size="icon" variant="outline" aria-label="Notifications" className="rounded-2xl">
               <Bell />
             </Button>
           </div>
         </header>
-        <div className="p-4 md:p-6">
+        <div className="p-4 md:p-6 lg:p-7">
           {children}
-          <div className="mt-6 rounded-lg border border-gold/20 bg-gold/10 px-4 py-3 text-sm text-white/80">
-            HEIST STOKER is for education, scanner practice and paper trading. This is not investment advice. Confirm with
-            your own analysis before trading.
+          <div className="mt-8 rounded-[24px] border border-gold/20 bg-gold/10 px-5 py-4">
+            <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-sm font-bold text-white">HEIST STOKER</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-gold">Decode Smart Money</p>
+              </div>
+              <p className="max-w-3xl text-sm text-white/80">
+                HEIST STOKER is for education, scanner practice and paper trading. This is not investment advice. Confirm with your own analysis before trading.
+              </p>
+            </div>
           </div>
         </div>
       </main>

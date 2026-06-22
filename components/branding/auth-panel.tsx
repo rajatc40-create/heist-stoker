@@ -8,24 +8,25 @@ import { Label } from "@/components/ui/label";
 
 export function AuthPanel() {
   return (
-    <Card className="border-gold/20 bg-black/35">
+    <Card className="h-full border-gold/20 bg-black/35">
       <CardHeader>
         <CardTitle>Authentication</CardTitle>
+        <p className="text-sm text-muted-foreground">Secure premium desk access for students and practice accounts.</p>
       </CardHeader>
-      <CardContent className="space-y-3">
-        <Button className="w-full" variant="outline">
+      <CardContent className="space-y-4">
+        <Button className="h-11 w-full" variant="outline">
           <UserRound />
           Guest Login
         </Button>
         <div className="grid gap-2">
           <Label htmlFor="email-login">Email Login</Label>
           <Input id="email-login" type="email" placeholder="trader@heiststoker.com" />
-          <Button variant="secondary">
+          <Button className="h-11" variant="secondary">
             <Mail />
             Continue with Email
           </Button>
         </div>
-        <Button className="w-full" variant="secondary">
+        <Button className="h-11 w-full" variant="secondary">
           <Chrome />
           Google Login
         </Button>
