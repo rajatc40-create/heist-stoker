@@ -90,18 +90,18 @@ export function ScannerBoard() {
     <div className="grid gap-4">
       <ChartinkAlertsTable />
 
-      <section className="rounded-xl border border-white/10 bg-black/35 p-4 md:p-5">
+      <section className="rounded-2xl border border-[#334155] bg-[#111827] p-4 md:p-5">
         <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
           <div>
             <div className="flex flex-wrap items-center gap-2">
-              <h3 className="text-xl font-bold text-white">Scanner Workspace</h3>
+              <h3 className="text-xl font-bold text-slate-50">Scanner Workspace</h3>
               <SourceBadge source={marketStatus?.source === "yahoo-chart" ? "Yahoo Delayed" : "Manual Demo Data"} />
               <SourceBadge source="Paper Mode" />
             </div>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-1 text-sm text-slate-400">
               Morning Breakfast and High Money Flow use official NSE pre-open data. Remaining scanners use delayed or demo feeds.
             </p>
-            <p className="mt-1 text-xs text-muted-foreground">Data may be delayed. Confirm before trade.</p>
+            <p className="mt-1 text-xs text-slate-500">Data may be delayed. Confirm before trade.</p>
           </div>
           <Button variant="outline" onClick={() => setRefreshTick((current) => current + 1)} disabled={isLoading}>
             <RefreshCcw />
@@ -109,13 +109,13 @@ export function ScannerBoard() {
           </Button>
         </div>
         <div className="mt-4 grid gap-4">
-          <div className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-white/10 bg-white/[0.03] px-4 py-3 text-sm">
-            <p className="text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#334155] bg-[#0f172a] px-4 py-3 text-sm">
+            <p className="text-slate-400">
               {marketStatus
                 ? `${marketStatus.liveCount} delayed live / ${marketStatus.fallbackCount} demo feed`
                 : "Loading scanner feed status"}
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-slate-400">
               Last refresh: <ClientTime value={lastRefresh} format="time" fallback="waiting for feed" />
             </p>
           </div>
@@ -123,7 +123,11 @@ export function ScannerBoard() {
           <Tabs value={activeTab} onValueChange={setActiveTab}>
             <TabsList className="h-auto w-full flex-wrap justify-start gap-1 bg-transparent p-0">
               {scannerTabs.map((tab) => (
-                <TabsTrigger key={tab.id} value={tab.id} className="border border-white/10 bg-white/[0.03]">
+                <TabsTrigger
+                  key={tab.id}
+                  value={tab.id}
+                  className="border border-[#334155] bg-[#0f172a] text-slate-300 data-[state=active]:border-[#3B82F6]/40 data-[state=active]:bg-[#172554] data-[state=active]:text-slate-50"
+                >
                   {tab.label}
                 </TabsTrigger>
               ))}
@@ -158,57 +162,59 @@ function ScannerResultsPanel({
   isLoading: boolean;
 }) {
   return (
-    <Card className="border-white/10 bg-black/20">
+    <Card className="border-[#334155] bg-[#111827]">
       <CardHeader>
         <div className="flex flex-wrap items-center gap-2">
           <CardTitle>{title}</CardTitle>
           <SourceBadge source="Yahoo Delayed" />
         </div>
-        <p className="text-xs text-muted-foreground">Data may be delayed. Confirm before trade.</p>
+        <p className="text-xs text-slate-400">Data may be delayed. Confirm before trade.</p>
       </CardHeader>
       <CardContent className="grid gap-3">
         {error ? <p className="text-sm text-bearish">{error}</p> : null}
-        {isLoading && !results.length ? <p className="text-sm text-muted-foreground">Refreshing scanner data...</p> : null}
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Scanner</TableHead>
-              <TableHead>Symbol</TableHead>
-              <TableHead>Price</TableHead>
-              <TableHead>RSI</TableHead>
-              <TableHead>Volume</TableHead>
-              <TableHead>Change %</TableHead>
-              <TableHead>Timeframe</TableHead>
-              <TableHead>Reason</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {results.length ? (
-              results.map((result) => (
-                <TableRow key={result.id}>
-                  <TableCell>
-                    <Badge>{result.scanner}</Badge>
-                  </TableCell>
-                  <TableCell className="font-semibold text-white">{result.symbol}</TableCell>
-                  <TableCell>{result.price.toLocaleString("en-IN", { maximumFractionDigits: 2 })}</TableCell>
-                  <TableCell>{result.rsi?.toFixed(1) ?? "-"}</TableCell>
-                  <TableCell>{result.volume.toLocaleString("en-IN")}</TableCell>
-                  <TableCell className={result.changePercent >= 0 ? "text-bullish" : "text-bearish"}>
-                    {formatPercent(result.changePercent)}
-                  </TableCell>
-                  <TableCell>{result.timeframe}</TableCell>
-                  <TableCell className="min-w-[220px] text-muted-foreground">{result.reason}</TableCell>
-                </TableRow>
-              ))
-            ) : (
+        {isLoading && !results.length ? <p className="text-sm text-slate-400">Refreshing scanner data...</p> : null}
+        <div className="overflow-x-auto rounded-xl border border-[#334155]">
+          <Table>
+            <TableHeader>
               <TableRow>
-                <TableCell colSpan={8} className="py-8 text-center text-muted-foreground">
-                  No scanner matches available right now.
-                </TableCell>
+                <TableHead>Scanner</TableHead>
+                <TableHead>Symbol</TableHead>
+                <TableHead>Price</TableHead>
+                <TableHead>RSI</TableHead>
+                <TableHead>Volume</TableHead>
+                <TableHead>Change %</TableHead>
+                <TableHead>Timeframe</TableHead>
+                <TableHead>Reason</TableHead>
               </TableRow>
-            )}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {results.length ? (
+                results.map((result) => (
+                  <TableRow key={result.id}>
+                    <TableCell>
+                      <Badge>{result.scanner}</Badge>
+                    </TableCell>
+                    <TableCell className="font-semibold text-white">{result.symbol}</TableCell>
+                    <TableCell>{result.price.toLocaleString("en-IN", { maximumFractionDigits: 2 })}</TableCell>
+                    <TableCell>{result.rsi?.toFixed(1) ?? "-"}</TableCell>
+                    <TableCell>{result.volume.toLocaleString("en-IN")}</TableCell>
+                    <TableCell className={result.changePercent >= 0 ? "text-bullish" : "text-bearish"}>
+                      {formatPercent(result.changePercent)}
+                    </TableCell>
+                    <TableCell>{result.timeframe}</TableCell>
+                    <TableCell className="min-w-[220px] text-slate-400">{result.reason}</TableCell>
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={8} className="py-8 text-center text-muted-foreground">
+                    No scanner matches available right now.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
       </CardContent>
     </Card>
   );
@@ -234,23 +240,23 @@ function OptionSellingScannerPanel() {
   ];
 
   return (
-    <Card className="border-white/10 bg-black/20">
+    <Card className="border-[#334155] bg-[#111827]">
       <CardHeader>
         <div className="flex flex-wrap items-center gap-2">
           <CardTitle>Option Selling Scanner</CardTitle>
           <SourceBadge source="Paper Mode" />
           <SourceBadge source="Manual Demo Data" />
         </div>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-slate-400">
           Education-only option selling desk for premium decay ideas, lot planning, and risk-defined structures.
         </p>
       </CardHeader>
       <CardContent className="grid gap-3 md:grid-cols-3">
         {ideas.map((idea) => (
-          <div key={idea.structure} className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
-            <p className="text-sm font-semibold text-gold">{idea.structure}</p>
-            <p className="mt-2 text-sm text-white">{idea.market}</p>
-            <p className="mt-2 text-xs leading-5 text-muted-foreground">{idea.note}</p>
+          <div key={idea.structure} className="rounded-xl border border-[#334155] bg-[#0f172a] p-4">
+            <p className="text-sm font-semibold text-[#F59E0B]">{idea.structure}</p>
+            <p className="mt-2 text-sm text-slate-50">{idea.market}</p>
+            <p className="mt-2 text-xs leading-5 text-slate-400">{idea.note}</p>
           </div>
         ))}
       </CardContent>

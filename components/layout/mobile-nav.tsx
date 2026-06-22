@@ -14,7 +14,7 @@ export function MobileNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-30 border-b border-white/10 bg-black/90 p-3 backdrop-blur lg:hidden">
+    <div className="sticky top-0 z-30 border-b border-[#334155] bg-[#0b1220]/95 p-3 backdrop-blur lg:hidden">
       <div className="flex items-center justify-between gap-3">
         <BrandMark compact />
         <Button size="icon" variant="outline" aria-label="Open navigation" onClick={() => setOpen((current) => !current)}>
@@ -23,7 +23,7 @@ export function MobileNav() {
       </div>
 
       {open ? (
-        <div className="mt-3 grid gap-2 rounded-lg border border-white/10 bg-black/95 p-3">
+        <div className="mt-3 grid gap-2 rounded-xl border border-[#334155] bg-[#0f172a] p-3">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const active = pathname === item.href;
@@ -34,8 +34,8 @@ export function MobileNav() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "inline-flex h-10 items-center gap-2 rounded-md border border-white/10 px-3 text-sm font-semibold text-muted-foreground",
-                  active && "border-gold/40 bg-gold/10 text-gold"
+                  "inline-flex h-10 items-center gap-2 rounded-lg border border-[#334155] px-3 text-sm font-semibold text-slate-400",
+                  active && "border-[#3B82F6]/35 bg-[#172554] text-slate-50"
                 )}
               >
                 <Icon className="size-4" />

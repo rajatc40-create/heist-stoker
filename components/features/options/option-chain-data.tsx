@@ -29,7 +29,7 @@ const summaryCards = [
 export function OptionChainData() {
   return (
     <div className="grid gap-4">
-      <Card className="border-gold/20 bg-black/35">
+      <Card className="border-[#334155] bg-[#111827]">
         <CardHeader className="flex-row items-center justify-between gap-3">
           <div>
             <div className="flex flex-wrap items-center gap-2">
@@ -37,8 +37,8 @@ export function OptionChainData() {
               <SourceBadge source="Manual Demo Data" />
               <SourceBadge source="Paper Mode" />
             </div>
-            <p className="mt-1 text-sm text-muted-foreground">NIFTY option chain practice data for paper trading decisions.</p>
-            <p className="mt-1 text-xs text-muted-foreground">Data may be delayed. Confirm before trade.</p>
+            <p className="mt-1 text-sm text-slate-400">NIFTY option chain practice data for paper trading decisions.</p>
+            <p className="mt-1 text-xs text-slate-500">Data may be delayed. Confirm before trade.</p>
           </div>
           <Button asChild variant="outline">
             <Link href="/demo-trading">
@@ -50,54 +50,56 @@ export function OptionChainData() {
         <CardContent className="grid gap-4">
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
             {summaryCards.map((item) => (
-              <div key={item.label} className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
-                <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">{item.label}</p>
-                <p className="mt-2 text-lg font-bold text-white">{item.value}</p>
+              <div key={item.label} className="rounded-xl border border-[#334155] bg-[#0f172a] p-4">
+                <p className="text-xs uppercase tracking-[0.14em] text-slate-400">{item.label}</p>
+                <p className="mt-2 text-lg font-bold text-slate-50">{item.value}</p>
               </div>
             ))}
           </div>
 
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>CE Premium</TableHead>
-                <TableHead>Strike</TableHead>
-                <TableHead>PE Premium</TableHead>
-                <TableHead>CE OI</TableHead>
-                <TableHead>PE OI</TableHead>
-                <TableHead>Bias</TableHead>
-                <TableHead>Action</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {optionRows.map((row) => (
-                <TableRow key={row.strike}>
-                  <TableCell className="font-semibold text-bullish">{row.ce.toLocaleString("en-IN")}</TableCell>
-                  <TableCell className="font-bold text-white">{row.strike.toLocaleString("en-IN")}</TableCell>
-                  <TableCell className="font-semibold text-bearish">{row.pe.toLocaleString("en-IN")}</TableCell>
-                  <TableCell>{row.ceOi}</TableCell>
-                  <TableCell>{row.peOi}</TableCell>
-                  <TableCell>{row.bias}</TableCell>
-                  <TableCell>
-                    <Button asChild size="sm" variant="secondary">
-                      <Link href="/demo-trading">Paper Trade</Link>
-                    </Button>
-                  </TableCell>
+          <div className="overflow-x-auto rounded-xl border border-[#334155]">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>CE Premium</TableHead>
+                  <TableHead>Strike</TableHead>
+                  <TableHead>PE Premium</TableHead>
+                  <TableHead>CE OI</TableHead>
+                  <TableHead>PE OI</TableHead>
+                  <TableHead>Bias</TableHead>
+                  <TableHead>Action</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {optionRows.map((row) => (
+                  <TableRow key={row.strike}>
+                    <TableCell className="font-semibold text-bullish">{row.ce.toLocaleString("en-IN")}</TableCell>
+                    <TableCell className="font-bold text-slate-50">{row.strike.toLocaleString("en-IN")}</TableCell>
+                    <TableCell className="font-semibold text-bearish">{row.pe.toLocaleString("en-IN")}</TableCell>
+                    <TableCell>{row.ceOi}</TableCell>
+                    <TableCell>{row.peOi}</TableCell>
+                    <TableCell>{row.bias}</TableCell>
+                    <TableCell>
+                      <Button asChild size="sm" variant="secondary">
+                        <Link href="/demo-trading">Paper Trade</Link>
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </CardContent>
       </Card>
 
-      <Card className="border-white/10 bg-black/35">
+      <Card className="border-[#334155] bg-[#111827]">
         <CardContent className="flex items-start gap-3 p-5">
-          <div className="grid size-10 shrink-0 place-items-center rounded-md border border-gold/25 bg-gold/10 text-gold">
+          <div className="grid size-10 shrink-0 place-items-center rounded-xl border border-[#334155] bg-[#0f172a] text-[#F59E0B]">
             <CandlestickChart className="size-5" />
           </div>
           <div>
-            <p className="font-bold text-white">Use option chain for practice and confirmation only.</p>
-            <p className="mt-1 text-sm leading-6 text-muted-foreground">
+            <p className="font-bold text-slate-50">Use option chain for practice and confirmation only.</p>
+            <p className="mt-1 text-sm leading-6 text-slate-400">
               This board is built for education mode, paper execution planning, support and resistance confirmation, and strategy rehearsal.
             </p>
           </div>

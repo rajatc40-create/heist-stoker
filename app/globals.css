@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --background: 140 14% 5%;
-  --foreground: 0 0% 96%;
-  --card: 148 18% 8%;
-  --card-foreground: 0 0% 96%;
-  --muted: 150 14% 12%;
-  --muted-foreground: 150 10% 68%;
-  --primary: 46 62% 52%;
-  --primary-foreground: 140 14% 5%;
-  --destructive: 354 100% 65%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 148 20% 18%;
-  --input: 148 20% 18%;
-  --ring: 46 62% 52%;
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --card: 220 39% 11%;
+  --card-foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 210 40% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 215 28% 25%;
+  --input: 215 28% 25%;
+  --ring: 217 91% 60%;
 }
 
 * {
@@ -23,7 +23,7 @@
 }
 
 html {
-  background: #0b0f0c;
+  background: #0f172a;
   color-scheme: dark;
 }
 
@@ -31,9 +31,9 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(31, 94, 68, 0.18), transparent 30%),
-    radial-gradient(circle at top right, rgba(212, 175, 55, 0.1), transparent 24%),
-    linear-gradient(180deg, #0b0f0c 0%, #0d120f 48%, #0b0f0c 100%);
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 26%),
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 20%),
+    linear-gradient(180deg, #0f172a 0%, #111827 52%, #0f172a 100%);
   color: hsl(var(--foreground));
   font-feature-settings: "rlig" 1, "calt" 1;
   letter-spacing: 0;
@@ -52,8 +52,8 @@ html[data-theme="solar-cream"] {
   --ring: 40 75% 42%;
   --theme-page-bg: linear-gradient(135deg, rgba(216, 168, 62, 0.18) 0%, transparent 32%),
     linear-gradient(180deg, #fff8e8 0%, #f8f1dd 50%, #efe2bf 100%);
-  --theme-panel: rgba(255, 252, 244, 0.82);
-  --theme-panel-strong: rgba(255, 252, 244, 0.95);
+  --theme-panel: rgba(255, 252, 244, 0.84);
+  --theme-panel-strong: rgba(255, 252, 244, 0.96);
   --theme-chip: rgba(96, 72, 25, 0.07);
   --theme-line: rgba(119, 91, 33, 0.24);
   --theme-text: #171a20;
@@ -98,7 +98,7 @@ html[data-theme="saffron-light"] {
   --ring: 31 88% 48%;
   --theme-page-bg: linear-gradient(135deg, rgba(255, 153, 0, 0.18) 0%, transparent 30%),
     linear-gradient(180deg, #fffaf0 0%, #fff4d6 48%, #f5ddb0 100%);
-  --theme-panel: rgba(255, 255, 255, 0.82);
+  --theme-panel: rgba(255, 255, 255, 0.84);
   --theme-panel-strong: rgba(255, 255, 255, 0.96);
   --theme-chip: rgba(146, 76, 9, 0.08);
   --theme-line: rgba(146, 76, 9, 0.24);
@@ -158,11 +158,11 @@ html[data-theme="dark-gold"] body {
 .brand-sidebar-title,
 .brand-inline,
 .brand-word-primary {
-  color: #f7fff8;
+  color: #f8fafc;
 }
 
 .brand-word-accent {
-  color: #d4af37;
+  color: #f59e0b;
 }
 
 html[data-theme="solar-cream"] .brand-sidebar-title,
@@ -223,6 +223,7 @@ html[data-theme]:not([data-theme="dark-gold"]) .text-white\/68,
 html[data-theme]:not([data-theme="dark-gold"]) .text-white\/72,
 html[data-theme]:not([data-theme="dark-gold"]) .text-white\/76,
 html[data-theme]:not([data-theme="dark-gold"]) .text-white\/78,
+html[data-theme]:not([data-theme="dark-gold"]) .text-white\/80,
 html[data-theme]:not([data-theme="dark-gold"]) .text-white\/88 {
   color: var(--theme-text) !important;
 }
@@ -234,26 +235,9 @@ html[data-theme="emerald-light"] .text-white\/68,
 html[data-theme="emerald-light"] .text-white\/72,
 html[data-theme="emerald-light"] .text-white\/76,
 html[data-theme="emerald-light"] .text-white\/78,
+html[data-theme="emerald-light"] .text-white\/80,
 html[data-theme="emerald-light"] .text-white\/88 {
   color: #f7fff8 !important;
-}
-
-html[data-theme="emerald-light"] header .text-white,
-html[data-theme="emerald-light"] aside .text-white,
-html[data-theme="emerald-light"] nav .text-white {
-  color: #f7fff8 !important;
-}
-
-html[data-theme="emerald-light"] :is(.bg-black, .bg-black\/20, .bg-black\/30, .bg-black\/35, .bg-black\/45, .bg-black\/55, .bg-black\/70, .bg-black\/90, .bg-\[\#080a0d\]) .text-muted-foreground {
-  color: #bfd9ce !important;
-}
-
-html[data-theme="emerald-light"] :is(.bg-white\/8, .bg-white\/5, .bg-white\/\[0\.03\], .bg-white\/\[0\.04\]) .text-muted-foreground {
-  color: #bfd9ce !important;
-}
-
-html[data-theme="emerald-light"] .bg-card {
-  background-color: #063b2d !important;
 }
 
 html[data-theme]:not([data-theme="dark-gold"]) .text-gold {
@@ -279,10 +263,6 @@ html[data-theme]:not([data-theme="dark-gold"]) .border-gold\/50 {
   border-color: color-mix(in srgb, var(--theme-accent) 36%, transparent) !important;
 }
 
-html[data-theme]:not([data-theme="dark-gold"]) .shadow-glow {
-  box-shadow: 0 0 30px color-mix(in srgb, var(--theme-accent) 18%, transparent) !important;
-}
-
 html[data-theme]:not([data-theme="dark-gold"]) input,
 html[data-theme]:not([data-theme="dark-gold"]) textarea,
 html[data-theme]:not([data-theme="dark-gold"]) select {
@@ -291,7 +271,7 @@ html[data-theme]:not([data-theme="dark-gold"]) select {
 }
 
 .brand-field-text {
-  color: #f7fff8 !important;
+  color: #f8fafc !important;
 }
 
 html[data-theme]:not([data-theme="dark-gold"]) .brand-field-text {
@@ -299,42 +279,35 @@ html[data-theme]:not([data-theme="dark-gold"]) .brand-field-text {
   font-weight: 700;
 }
 
-html[data-theme]:not([data-theme="dark-gold"]) .bg-red-500.text-white,
-html[data-theme]:not([data-theme="dark-gold"]) .bg-bearish.text-white,
-html[data-theme]:not([data-theme="dark-gold"]) .bg-red-500 .text-white,
-html[data-theme]:not([data-theme="dark-gold"]) .bg-bearish .text-white {
-  color: #ffffff !important;
-}
-
 ::selection {
-  background: rgba(216, 168, 62, 0.28);
+  background: rgba(59, 130, 246, 0.3);
   color: #fff;
 }
 
 @layer utilities {
   .premium-panel {
-    background: linear-gradient(180deg, rgba(16, 23, 20, 0.88), rgba(10, 15, 12, 0.92));
-    backdrop-filter: blur(18px);
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.92), rgba(15, 23, 42, 0.94));
+    backdrop-filter: blur(16px);
     box-shadow:
-      0 20px 60px rgba(0, 0, 0, 0.32),
-      inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      0 18px 45px rgba(2, 8, 23, 0.32),
+      inset 0 1px 0 rgba(248, 250, 252, 0.03);
   }
 
   .premium-shadow {
     box-shadow:
-      0 18px 50px rgba(0, 0, 0, 0.3),
-      0 0 0 1px rgba(255, 255, 255, 0.025);
+      0 14px 36px rgba(2, 8, 23, 0.28),
+      0 0 0 1px rgba(148, 163, 184, 0.04);
   }
 
   .premium-grid {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 
   .text-premium-muted {
-    color: #a8b3ac;
+    color: #94a3b8;
   }
 
   .market-grid {
@@ -346,7 +319,7 @@ html[data-theme]:not([data-theme="dark-gold"]) .bg-bearish .text-white {
   }
 
   .scrollbar-thin {
-    scrollbar-color: rgba(216, 168, 62, 0.4) rgba(255, 255, 255, 0.04);
+    scrollbar-color: rgba(59, 130, 246, 0.45) rgba(255, 255, 255, 0.04);
     scrollbar-width: thin;
   }
 }

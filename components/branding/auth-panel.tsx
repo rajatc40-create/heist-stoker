@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, UserRound, Chrome } from "lucide-react";
+import { Chrome, Mail, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,10 +8,10 @@ import { Label } from "@/components/ui/label";
 
 export function AuthPanel() {
   return (
-    <Card className="h-full border-gold/20 bg-black/35">
+    <Card className="h-full border-[#334155] bg-[#111827]">
       <CardHeader>
         <CardTitle>Authentication</CardTitle>
-        <p className="text-sm text-muted-foreground">Secure premium desk access for students and practice accounts.</p>
+        <p className="text-sm text-slate-400">Secure desk access for students, scanner practice, and paper accounts.</p>
       </CardHeader>
       <CardContent className="space-y-4">
         <Button className="h-11 w-full" variant="outline">
