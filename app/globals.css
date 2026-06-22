@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 158 84% 7%;
+  --foreground: 0 0% 96%;
+  --card: 158 74% 10%;
+  --card-foreground: 0 0% 96%;
+  --muted: 158 34% 16%;
+  --muted-foreground: 152 20% 74%;
+  --primary: 42 66% 55%;
+  --primary-foreground: 158 84% 7%;
+  --destructive: 354 100% 65%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 152 32% 22%;
+  --input: 152 32% 22%;
+  --ring: 42 66% 55%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  background: #021f18;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(135deg, rgba(216, 168, 62, 0.09) 0%, transparent 28%),
+    linear-gradient(180deg, #063b2d 0%, #021f18 48%, #0b3a2d 100%);
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+html[data-theme="solar-cream"] {
+  --background: 44 72% 94%;
+  --foreground: 225 24% 13%;
+  --card: 42 58% 97%;
+  --card-foreground: 225 24% 13%;
+  --muted: 42 34% 88%;
+  --muted-foreground: 223 12% 40%;
+  --border: 38 34% 78%;
+  --input: 38 34% 78%;
+  --ring: 40 75% 42%;
+  --theme-page-bg: linear-gradient(135deg, rgba(216, 168, 62, 0.18) 0%, transparent 32%),
+    linear-gradient(180deg, #fff8e8 0%, #f8f1dd 50%, #efe2bf 100%);
+  --theme-panel: rgba(255, 252, 244, 0.82);
+  --theme-panel-strong: rgba(255, 252, 244, 0.95);
+  --theme-chip: rgba(96, 72, 25, 0.07);
+  --theme-line: rgba(119, 91, 33, 0.24);
+  --theme-text: #171a20;
+  --theme-muted: #5d6572;
+  --theme-accent: #b88712;
+  background: #f8f1dd;
+  color-scheme: light;
+}
+
+html[data-theme="emerald-light"] {
+  --background: 138 44% 95%;
+  --foreground: 158 30% 12%;
+  --card: 158 74% 12%;
+  --card-foreground: 120 100% 98%;
+  --muted: 148 28% 88%;
+  --muted-foreground: 158 12% 38%;
+  --border: 148 26% 76%;
+  --input: 148 26% 76%;
+  --ring: 42 66% 55%;
+  --theme-page-bg: linear-gradient(135deg, rgba(12, 107, 76, 0.16) 0%, transparent 32%),
+    linear-gradient(180deg, #f9fff8 0%, #eef9ef 52%, #dcefe0 100%);
+  --theme-panel: rgba(6, 59, 45, 0.94);
+  --theme-panel-strong: rgba(250, 255, 249, 0.97);
+  --theme-chip: rgba(6, 59, 45, 0.78);
+  --theme-line: rgba(216, 168, 62, 0.26);
+  --theme-text: #102019;
+  --theme-muted: #4f675d;
+  --theme-accent: #d8a83e;
+  background: #eef8f0;
+  color-scheme: light;
+}
+
+html[data-theme="saffron-light"] {
+  --background: 42 100% 92%;
+  --foreground: 28 32% 14%;
+  --card: 0 0% 100%;
+  --card-foreground: 28 32% 14%;
+  --muted: 38 76% 88%;
+  --muted-foreground: 28 16% 42%;
+  --border: 35 58% 75%;
+  --input: 35 58% 75%;
+  --ring: 31 88% 48%;
+  --theme-page-bg: linear-gradient(135deg, rgba(255, 153, 0, 0.18) 0%, transparent 30%),
+    linear-gradient(180deg, #fffaf0 0%, #fff4d6 48%, #f5ddb0 100%);
+  --theme-panel: rgba(255, 255, 255, 0.82);
+  --theme-panel-strong: rgba(255, 255, 255, 0.96);
+  --theme-chip: rgba(146, 76, 9, 0.08);
+  --theme-line: rgba(146, 76, 9, 0.24);
+  --theme-text: #24180c;
+  --theme-muted: #6e5a43;
+  --theme-accent: #e28a12;
+  background: #fff4d6;
+  color-scheme: light;
+}
+
+html[data-theme="sky-white"] {
+  --background: 205 100% 97%;
+  --foreground: 216 34% 14%;
+  --card: 0 0% 100%;
+  --card-foreground: 216 34% 14%;
+  --muted: 209 54% 91%;
+  --muted-foreground: 215 16% 42%;
+  --border: 209 44% 78%;
+  --input: 209 44% 78%;
+  --ring: 209 68% 45%;
+  --theme-page-bg: linear-gradient(135deg, rgba(56, 189, 248, 0.16) 0%, transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #eef7ff 52%, #dceeff 100%);
+  --theme-panel: rgba(255, 255, 255, 0.84);
+  --theme-panel-strong: rgba(255, 255, 255, 0.97);
+  --theme-chip: rgba(36, 119, 200, 0.08);
+  --theme-line: rgba(36, 119, 200, 0.22);
+  --theme-text: #111b2c;
+  --theme-muted: #596a80;
+  --theme-accent: #2477c8;
+  background: #eef7ff;
+  color-scheme: light;
+}
+
+html[data-theme="dark-gold"] {
+  --background: 220 18% 3%;
+  --foreground: 0 0% 96%;
+  --card: 220 14% 5%;
+  --card-foreground: 0 0% 96%;
+  --muted: 42 24% 12%;
+  --muted-foreground: 44 12% 68%;
+  --border: 42 20% 18%;
+  --input: 42 20% 18%;
+  --ring: 42 66% 55%;
+  --theme-accent: #d8a83e;
+  background: #050506;
+  color-scheme: dark;
+}
+
+html[data-theme="dark-gold"] body {
+  background:
+    linear-gradient(135deg, rgba(216, 168, 62, 0.09) 0%, transparent 30%),
+    radial-gradient(circle at top right, rgba(216, 168, 62, 0.08), transparent 34%),
+    linear-gradient(180deg, #050506 0%, #020305 52%, #090705 100%);
+  color: hsl(var(--foreground));
+}
+
+.brand-sidebar-title,
+.brand-inline,
+.brand-word-primary {
+  color: #f7fff8;
+}
+
+.brand-word-accent {
+  color: #d8a83e;
+}
+
+html[data-theme="solar-cream"] .brand-sidebar-title,
+html[data-theme="solar-cream"] .brand-inline,
+html[data-theme="solar-cream"] .brand-word-primary,
+html[data-theme="saffron-light"] .brand-sidebar-title,
+html[data-theme="saffron-light"] .brand-inline,
+html[data-theme="saffron-light"] .brand-word-primary,
+html[data-theme="sky-white"] .brand-sidebar-title,
+html[data-theme="sky-white"] .brand-inline,
+html[data-theme="sky-white"] .brand-word-primary {
+  color: #0b4f3b;
+}
+
+html[data-theme="solar-cream"] .brand-word-accent,
+html[data-theme="saffron-light"] .brand-word-accent,
+html[data-theme="sky-white"] .brand-word-accent {
+  color: #d88718;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) body {
+  background: var(--theme-page-bg);
+  color: var(--theme-text);
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .bg-black,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-black\/20,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-black\/30,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-black\/35,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-black\/45,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-black\/55,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-black\/70,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-black\/90,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-\[\#080a0d\] {
+  background-color: var(--theme-panel) !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .bg-steel,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-white\/8,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-white\/5,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-white\/\[0\.03\],
+html[data-theme]:not([data-theme="dark-gold"]) .bg-white\/\[0\.04\] {
+  background-color: var(--theme-chip) !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .border-white\/8,
+html[data-theme]:not([data-theme="dark-gold"]) .border-white\/10,
+html[data-theme]:not([data-theme="dark-gold"]) .border-white\/15,
+html[data-theme]:not([data-theme="dark-gold"]) .border-white\/20,
+html[data-theme]:not([data-theme="dark-gold"]) .border-white\/25 {
+  border-color: var(--theme-line) !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .text-white,
+html[data-theme]:not([data-theme="dark-gold"]) .text-white\/62,
+html[data-theme]:not([data-theme="dark-gold"]) .text-white\/65,
+html[data-theme]:not([data-theme="dark-gold"]) .text-white\/68,
+html[data-theme]:not([data-theme="dark-gold"]) .text-white\/72,
+html[data-theme]:not([data-theme="dark-gold"]) .text-white\/76,
+html[data-theme]:not([data-theme="dark-gold"]) .text-white\/78,
+html[data-theme]:not([data-theme="dark-gold"]) .text-white\/88 {
+  color: var(--theme-text) !important;
+}
+
+html[data-theme="emerald-light"] .text-white,
+html[data-theme="emerald-light"] .text-white\/62,
+html[data-theme="emerald-light"] .text-white\/65,
+html[data-theme="emerald-light"] .text-white\/68,
+html[data-theme="emerald-light"] .text-white\/72,
+html[data-theme="emerald-light"] .text-white\/76,
+html[data-theme="emerald-light"] .text-white\/78,
+html[data-theme="emerald-light"] .text-white\/88 {
+  color: #f7fff8 !important;
+}
+
+html[data-theme="emerald-light"] header .text-white,
+html[data-theme="emerald-light"] aside .text-white,
+html[data-theme="emerald-light"] nav .text-white {
+  color: #f7fff8 !important;
+}
+
+html[data-theme="emerald-light"] :is(.bg-black, .bg-black\/20, .bg-black\/30, .bg-black\/35, .bg-black\/45, .bg-black\/55, .bg-black\/70, .bg-black\/90, .bg-\[\#080a0d\]) .text-muted-foreground {
+  color: #bfd9ce !important;
+}
+
+html[data-theme="emerald-light"] :is(.bg-white\/8, .bg-white\/5, .bg-white\/\[0\.03\], .bg-white\/\[0\.04\]) .text-muted-foreground {
+  color: #bfd9ce !important;
+}
+
+html[data-theme="emerald-light"] .bg-card {
+  background-color: #063b2d !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .text-gold {
+  color: var(--theme-accent) !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .bg-gold,
+html[data-theme]:not([data-theme="dark-gold"]) .hover\:bg-\[\#efc75f\]:hover {
+  background-color: var(--theme-accent) !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .bg-gold\/5,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-gold\/10 {
+  background-color: color-mix(in srgb, var(--theme-accent) 13%, transparent) !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .border-gold\/20,
+html[data-theme]:not([data-theme="dark-gold"]) .border-gold\/25,
+html[data-theme]:not([data-theme="dark-gold"]) .border-gold\/30,
+html[data-theme]:not([data-theme="dark-gold"]) .border-gold\/35,
+html[data-theme]:not([data-theme="dark-gold"]) .border-gold\/40,
+html[data-theme]:not([data-theme="dark-gold"]) .border-gold\/50 {
+  border-color: color-mix(in srgb, var(--theme-accent) 36%, transparent) !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .shadow-glow {
+  box-shadow: 0 0 30px color-mix(in srgb, var(--theme-accent) 18%, transparent) !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) input,
+html[data-theme]:not([data-theme="dark-gold"]) textarea,
+html[data-theme]:not([data-theme="dark-gold"]) select {
+  background-color: var(--theme-panel-strong) !important;
+  color: var(--theme-text) !important;
+}
+
+.brand-field-text {
+  color: #f7fff8 !important;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .brand-field-text {
+  color: #0b4f3b !important;
+  font-weight: 700;
+}
+
+html[data-theme]:not([data-theme="dark-gold"]) .bg-red-500.text-white,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-bearish.text-white,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-red-500 .text-white,
+html[data-theme]:not([data-theme="dark-gold"]) .bg-bearish .text-white {
+  color: #ffffff !important;
+}
+
+::selection {
+  background: rgba(216, 168, 62, 0.28);
+  color: #fff;
+}
+
+@layer utilities {
+  .market-grid {
+    background-size: 36px 36px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-thin {
+    scrollbar-color: rgba(216, 168, 62, 0.4) rgba(255, 255, 255, 0.04);
+    scrollbar-width: thin;
+  }
+}

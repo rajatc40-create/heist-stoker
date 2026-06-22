@@ -1,0 +1,8 @@
+{
+  "stocks": ["RELIANCE", "TATASTEEL", "NIFTY"],
+  "trigger_prices": [2868.2, 154.35, 23485],
+  "triggered_at": "2026-06-18T09:20:00+05:30",
+  "scan_name": "HEIST STOKER Liquidity Sweep",
+  "scan_url": "https://chartink.com/screener/heist-stoker-liquidity-sweep",
+  "alert_name": "Liquidity Sweep Alert"
+}
