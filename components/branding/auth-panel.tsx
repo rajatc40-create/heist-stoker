@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Chrome, Mail, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,10 +8,10 @@ import { Label } from "@/components/ui/label";
 
 export function AuthPanel() {
   return (
-    <Card className="h-full border-[#334155] bg-[#111827]">
+    <Card className="h-full border-[#E5E7EB] bg-white shadow-sm">
       <CardHeader>
         <CardTitle>Authentication</CardTitle>
-        <p className="text-sm text-slate-400">Secure desk access for students, scanner practice, and paper accounts.</p>
+        <p className="text-sm text-[#6B7280]">Secure desk access for students, scanner practice, and paper accounts.</p>
       </CardHeader>
       <CardContent className="space-y-4">
         <Button className="h-11 w-full" variant="outline">
@@ -20,7 +20,7 @@ export function AuthPanel() {
         </Button>
         <div className="grid gap-2">
           <Label htmlFor="email-login">Email Login</Label>
-          <Input id="email-login" type="email" placeholder="trader@heiststoker.com" />
+          <Input id="email-login" type="email" placeholder="trader@heiststoker.com" className="bg-white" />
           <Button className="h-11" variant="secondary">
             <Mail />
             Continue with Email

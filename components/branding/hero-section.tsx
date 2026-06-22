@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -39,32 +39,29 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="premium-panel premium-shadow relative overflow-hidden rounded-2xl border border-[#334155] p-5 md:p-6">
+    <section className="premium-panel premium-shadow relative overflow-hidden rounded-2xl border border-[#E5E7EB] p-5 md:p-6">
       <div className="premium-grid absolute inset-0 opacity-20" />
-      <div className="relative grid gap-5">
-        <div className="overflow-hidden rounded-2xl border border-[#334155] bg-[#0b1220]">
+      <div className="relative grid gap-4">
+        <div className="overflow-hidden rounded-xl border border-[#E5E7EB] bg-white">
           <img src={bannerSrc} alt="HEIST STOKER premium market banner" className="block h-auto w-full" />
         </div>
 
-        <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_320px]">
-          <div className="grid gap-5">
+        <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_290px] xl:items-start">
+          <div className="grid gap-4">
             <div className="flex flex-wrap items-center gap-2">
               <Badge variant="secondary">Trading Terminal</Badge>
-              <Badge variant="outline">Webull Style</Badge>
+              <Badge variant="outline">TradingView Light</Badge>
               <Badge variant="bullish">Paper Mode</Badge>
             </div>
-            <div className="grid gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#F59E0B]">{brand.tagline}</p>
-              <p className="max-w-3xl text-base leading-7 text-slate-300">
-                Scanner practice, paper trading, option review, and student learning in one cleaner terminal-style desk.
+            <div className="grid gap-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#D97706]">{brand.tagline}</p>
+              <p className="max-w-3xl text-sm leading-7 text-[#6B7280]">
+                Scanner practice, paper trading, option review, and student learning in one cleaner finance-style desk.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
               {brand.pillars.map((pillar) => (
-                <span
-                  key={pillar}
-                  className="rounded-lg border border-[#334155] bg-[#111827] px-3.5 py-2 text-xs font-semibold text-slate-300"
-                >
+                <span key={pillar} className="rounded-lg border border-[#E5E7EB] bg-[#F9FAFB] px-3.5 py-2 text-xs font-semibold text-[#374151]">
                   {pillar}
                 </span>
               ))}
@@ -91,39 +88,36 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#334155] bg-[#111827] p-5">
+          <div className="rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-4">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Market Pulse</p>
-                <h2 className="mt-2 text-xl font-bold tracking-normal text-slate-50">Active Watch</h2>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#6B7280]">Market Pulse</p>
+                <h2 className="mt-1 text-lg font-bold tracking-normal text-[#111827]">Active Watch</h2>
               </div>
-              <div className="grid size-10 place-items-center rounded-xl border border-bullish/30 bg-bullish/10 text-bullish">
+              <div className="grid size-10 place-items-center rounded-xl border border-green-200 bg-green-50 text-green-600">
                 <TrendingUp className="size-5" />
               </div>
             </div>
-            <div className="mt-5 grid gap-3">
+            <div className="mt-4 grid gap-2.5">
               {tape.map((item) => (
-                <div
-                  key={item.symbol}
-                  className="flex items-center justify-between gap-3 rounded-xl border border-[#334155] bg-[#0f172a] p-4"
-                >
+                <div key={item.symbol} className="flex items-center justify-between gap-3 rounded-xl border border-[#E5E7EB] bg-white p-3">
                   <div>
-                    <p className="text-sm font-bold text-slate-50">{item.symbol}</p>
-                    <p className="mt-1 text-xs text-slate-400">5m feed</p>
+                    <p className="text-sm font-bold text-[#111827]">{item.symbol}</p>
+                    <p className="mt-1 text-xs text-[#6B7280]">5m feed</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-semibold text-slate-50">{item.price}</p>
-                    <p className="mt-1 text-xs font-semibold text-bullish">{item.change}</p>
+                    <p className="text-sm font-semibold text-[#111827]">{item.price}</p>
+                    <p className="mt-1 text-xs font-semibold text-green-600">{item.change}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mt-5 rounded-xl border border-[#334155] bg-[#0f172a] p-4">
-              <div className="flex items-center gap-2 text-sm font-semibold text-[#F59E0B]">
+            <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-3">
+              <div className="flex items-center gap-2 text-sm font-semibold text-[#D97706]">
                 <ShieldCheck className="size-4" />
                 Education mode enabled
               </div>
-              <p className="mt-2 text-xs leading-6 text-slate-400">
+              <p className="mt-2 text-xs leading-6 text-[#6B7280]">
                 No real-money order placement. Use this platform for practice, review, and student learning.
               </p>
             </div>

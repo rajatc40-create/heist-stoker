@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import {
   ArrowUpRight,
   Bot,
@@ -100,28 +100,28 @@ const platformModules = [
 export function DashboardHome() {
   return (
     <AppShell title="Command Center" subtitle="Scanner, paper trading, market watch, and student learning hub.">
-      <div className="grid gap-6">
+      <div className="grid gap-5">
         <div className="grid gap-5 2xl:grid-cols-[minmax(0,1fr)_340px]">
           <HeroSection />
           <AuthPanel />
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {actionCards.map((card) => {
             const Icon = card.icon;
 
             return (
-              <Card key={card.title} className="h-full border-[#334155] bg-[#111827]">
-                <CardContent className="flex h-full min-h-[210px] flex-col gap-4 p-5">
+              <Card key={card.title} className="h-full border-[#E5E7EB] bg-white shadow-sm">
+                <CardContent className="flex h-full min-h-[198px] flex-col gap-4 p-5">
                   <div className="flex items-start justify-between gap-3">
-                    <div className="grid size-11 place-items-center rounded-xl border border-[#334155] bg-[#0f172a] text-[#60a5fa]">
+                    <div className="grid size-11 place-items-center rounded-xl border border-[#DBEAFE] bg-[#EFF6FF] text-[#2563EB]">
                       <Icon className="size-5" />
                     </div>
                     <SourceBadge source={card.badge} />
                   </div>
                   <div className="space-y-2">
-                    <p className="text-lg font-bold text-slate-50">{card.title}</p>
-                    <p className="text-sm leading-6 text-slate-400">{card.description}</p>
+                    <p className="text-lg font-bold text-[#111827]">{card.title}</p>
+                    <p className="text-sm leading-6 text-[#6B7280]">{card.description}</p>
                   </div>
                   <Button asChild className="mt-auto w-full justify-between">
                     <Link href={card.href}>
@@ -135,26 +135,18 @@ export function DashboardHome() {
           })}
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-6">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-6">
           {dashboardStats.map((stat, index) => (
-            <MetricCard
-              key={stat.label}
-              label={stat.label}
-              value={stat.value}
-              icon={stat.icon}
-              tone={index === 2 || index === 3 ? "green" : "gold"}
-            />
+            <MetricCard key={stat.label} label={stat.label} value={stat.value} icon={stat.icon} tone={index === 2 || index === 3 ? "green" : "gold"} />
           ))}
         </div>
 
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
-          <Card className="border-[#334155] bg-[#111827]">
+          <Card className="border-[#E5E7EB] bg-white shadow-sm">
             <CardHeader className="flex-row items-center justify-between gap-3">
               <div>
                 <CardTitle>Trading Desk</CardTitle>
-                <p className="mt-1 text-sm text-slate-400">
-                  Quick access to your daily workflow across scanners, paper trades, and option review.
-                </p>
+                <p className="mt-1 text-sm text-[#6B7280]">Quick access to your daily workflow across scanners, paper trades, and option review.</p>
               </div>
               <Badge variant="outline">Responsive</Badge>
             </CardHeader>
@@ -163,85 +155,70 @@ export function DashboardHome() {
                 const Icon = item.icon;
 
                 return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="group rounded-xl border border-[#334155] bg-[#0f172a] p-5 transition-all duration-200 hover:-translate-y-1 hover:border-[#3B82F6]/35 hover:bg-[#162033]"
-                  >
+                  <Link key={item.href} href={item.href} className="group rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#BFDBFE] hover:bg-white">
                     <div className="flex items-center justify-between gap-3">
-                      <div className="grid size-11 place-items-center rounded-xl border border-[#334155] bg-[#111827] text-[#F59E0B]">
+                      <div className="grid size-11 place-items-center rounded-xl border border-[#FDE68A] bg-amber-50 text-[#D97706]">
                         <Icon className="size-5" />
                       </div>
-                      <span className="text-xs font-semibold text-slate-500">0{index + 1}</span>
+                      <span className="text-xs font-semibold text-[#9CA3AF]">0{index + 1}</span>
                     </div>
-                    <h3 className="mt-5 text-lg font-bold text-slate-50">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-400">{item.description}</p>
+                    <h3 className="mt-5 text-lg font-bold text-[#111827]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[#6B7280]">{item.description}</p>
                   </Link>
                 );
               })}
             </CardContent>
           </Card>
 
-          <Card className="border-[#334155] bg-[#111827]">
+          <Card className="border-[#E5E7EB] bg-white shadow-sm">
             <CardHeader>
               <CardTitle>HEIST STOKER Academy</CardTitle>
-              <p className="mt-1 text-sm text-slate-400">Learning, video practice, and student desk routing.</p>
+              <p className="mt-1 text-sm text-[#6B7280]">Learning, video practice, and student desk routing.</p>
             </CardHeader>
             <CardContent className="space-y-4">
-              <a
-                href={brand.youtubeUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="block rounded-xl border border-[#334155] bg-[#0f172a] p-5 transition-all duration-200 hover:-translate-y-1 hover:border-red-500/35 hover:bg-[#18111a]"
-              >
+              <a href={brand.youtubeUrl} target="_blank" rel="noreferrer" className="block rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-red-200 hover:bg-white">
                 <div className="flex items-center gap-3">
                   <div className="grid size-11 place-items-center rounded-xl bg-red-500 text-white">
                     <Youtube className="size-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-slate-50">{brand.name} YouTube</p>
-                    <p className="text-xs leading-6 text-slate-400">
-                      {brand.youtubeHandle} - smart money lessons and market breakdowns.
-                    </p>
+                    <p className="text-sm font-bold text-[#111827]">{brand.name} YouTube</p>
+                    <p className="text-xs leading-6 text-[#6B7280]">{brand.youtubeHandle} - smart money lessons and market breakdowns.</p>
                   </div>
                 </div>
-                <div className="mt-4 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-[#1E293B] px-4 py-2 text-sm font-semibold text-slate-100 transition-colors hover:bg-[#263449]">
+                <div className="mt-4 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-[#EFF6FF] px-4 py-2 text-sm font-semibold text-[#2563EB] transition-colors hover:bg-[#DBEAFE]">
                   <ArrowUpRight />
                   Open Channel
                 </div>
               </a>
               <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-xl border border-[#334155] bg-[#0f172a] p-4">
-                  <p className="text-xs text-slate-400">Mode</p>
-                  <p className="mt-1 text-sm font-bold text-slate-50">Education</p>
+                <div className="rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-4">
+                  <p className="text-xs text-[#6B7280]">Mode</p>
+                  <p className="mt-1 text-sm font-bold text-[#111827]">Education</p>
                 </div>
-                <div className="rounded-xl border border-[#334155] bg-[#0f172a] p-4">
-                  <p className="text-xs text-slate-400">Risk</p>
-                  <p className="mt-1 text-sm font-bold text-slate-50">Paper Only</p>
+                <div className="rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-4">
+                  <p className="text-xs text-[#6B7280]">Risk</p>
+                  <p className="mt-1 text-sm font-bold text-[#111827]">Paper Only</p>
                 </div>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {platformModules.map((module) => {
             const Icon = module.icon;
 
             return (
-              <Link
-                key={module.href}
-                href={module.href}
-                className="premium-shadow group rounded-2xl border border-[#334155] bg-[#111827] p-5 transition-all duration-200 hover:-translate-y-1 hover:border-[#3B82F6]/35 hover:bg-[#162033]"
-              >
+              <Link key={module.href} href={module.href} className="premium-shadow group rounded-2xl border border-[#E5E7EB] bg-white p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#BFDBFE] hover:bg-[#FCFCFD]">
                 <div className="flex items-center justify-between gap-3">
-                  <div className="grid size-11 place-items-center rounded-xl border border-[#334155] bg-[#0f172a] text-[#F59E0B]">
+                  <div className="grid size-11 place-items-center rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] text-[#D97706]">
                     <Icon className="size-5" />
                   </div>
-                  <ArrowUpRight className="size-4 text-slate-500 transition-colors group-hover:text-[#60a5fa]" />
+                  <ArrowUpRight className="size-4 text-[#9CA3AF] transition-colors group-hover:text-[#2563EB]" />
                 </div>
-                <p className="mt-5 text-lg font-bold text-slate-50">{module.title}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{module.detail}</p>
+                <p className="mt-5 text-lg font-bold text-[#111827]">{module.title}</p>
+                <p className="mt-2 text-sm leading-6 text-[#6B7280]">{module.detail}</p>
               </Link>
             );
           })}
@@ -251,17 +228,15 @@ export function DashboardHome() {
 
         <div className="grid gap-5 xl:grid-cols-2">
           <AutosaveStatus />
-          <Card className="border-[#334155] bg-[#111827]">
+          <Card className="border-[#E5E7EB] bg-white shadow-sm">
             <CardContent className="flex flex-col gap-3 p-6 md:flex-row md:items-center md:justify-between">
               <div className="flex items-start gap-3">
-                <div className="grid size-12 shrink-0 place-items-center rounded-xl border border-[#334155] bg-[#0f172a] text-[#F59E0B]">
+                <div className="grid size-12 shrink-0 place-items-center rounded-xl border border-[#FDE68A] bg-amber-50 text-[#D97706]">
                   <CircleDollarSign className="size-5" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-50">Educational trading platform</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-400">
-                    Built for practice, teaching, journaling, and discipline. It does not place real broker orders.
-                  </p>
+                  <p className="font-bold text-[#111827]">Educational trading platform</p>
+                  <p className="mt-1 text-sm leading-6 text-[#6B7280]">Built for practice, teaching, journaling, and discipline. It does not place real broker orders.</p>
                 </div>
               </div>
               <Button asChild variant="outline">

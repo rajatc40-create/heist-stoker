@@ -1,4 +1,4 @@
-import * as React from "react";
+﻿import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
@@ -8,12 +8,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-[#3B82F6] text-white shadow-[0_10px_24px_rgba(59,130,246,0.22)] hover:-translate-y-0.5 hover:bg-[#2563eb]",
-        secondary: "bg-[#1E293B] text-slate-100 hover:-translate-y-0.5 hover:bg-[#263449]",
-        outline: "border border-[#334155] bg-transparent text-slate-100 hover:-translate-y-0.5 hover:border-[#3B82F6] hover:bg-[#172554]",
-        ghost: "text-muted-foreground hover:bg-white/8 hover:text-white",
-        destructive: "bg-bearish text-white hover:bg-bearish/90",
-        bullish: "bg-bullish text-slate-950 hover:bg-bullish/90"
+        default: "bg-[#2563EB] text-white shadow-sm hover:-translate-y-0.5 hover:bg-[#1d4ed8]",
+        secondary: "bg-[#F8FAFC] text-[#111827] border border-[#E5E7EB] hover:-translate-y-0.5 hover:bg-[#EFF6FF]",
+        outline: "border border-[#D1D5DB] bg-white text-[#111827] hover:-translate-y-0.5 hover:border-[#2563EB] hover:bg-[#EFF6FF]",
+        ghost: "text-[#6B7280] hover:bg-[#F3F4F6] hover:text-[#111827]",
+        destructive: "bg-[#DC2626] text-white hover:bg-[#b91c1c]",
+        bullish: "bg-[#16A34A] text-white hover:bg-[#15803d]"
       },
       size: {
         default: "h-10 px-4",
@@ -38,9 +38,7 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    return (
-      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
-    );
+    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
   }
 );
 Button.displayName = "Button";

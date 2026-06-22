@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react";
+﻿import type { LucideIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface MetricCardProps {
@@ -11,21 +11,21 @@ interface MetricCardProps {
 export function MetricCard({ label, value, icon: Icon, tone = "gold" }: MetricCardProps) {
   const toneClass =
     tone === "green"
-      ? "text-bullish bg-bullish/10 border-bullish/30"
+      ? "text-bullish bg-bullish/10 border-bullish/20"
       : tone === "red"
-        ? "text-bearish bg-bearish/10 border-bearish/30"
+        ? "text-bearish bg-bearish/10 border-bearish/20"
         : tone === "white"
-          ? "text-white bg-white/8 border-white/15"
-          : "text-[#F59E0B] bg-[#F59E0B]/10 border-[#F59E0B]/30";
+          ? "text-[#111827] bg-[#F8FAFC] border-[#E5E7EB]"
+          : "text-[#D97706] bg-[#D97706]/10 border-[#D97706]/20";
 
   return (
-    <Card className="h-full border-[#334155] bg-[#111827]">
-      <CardContent className="flex min-h-[124px] items-center justify-between gap-4 p-6">
+    <Card className="h-full border-[#E5E7EB] bg-white shadow-sm">
+      <CardContent className="flex min-h-[112px] items-center justify-between gap-4 p-5">
         <div className="min-w-0">
-          <p className="truncate text-sm text-slate-400">{label}</p>
-          <p className="mt-3 truncate text-[28px] font-bold leading-none text-slate-50">{value}</p>
+          <p className="truncate text-sm text-[#6B7280]">{label}</p>
+          <p className="mt-2 truncate text-[26px] font-bold leading-none text-[#111827]">{value}</p>
         </div>
-        <div className={`grid size-12 shrink-0 place-items-center rounded-2xl border ${toneClass}`}>
+        <div className={`grid size-11 shrink-0 place-items-center rounded-xl border ${toneClass}`}>
           <Icon className="size-5" />
         </div>
       </CardContent>
